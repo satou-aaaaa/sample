@@ -1,5 +1,0 @@
---reporter=plain
---color
---reporter=plain,output=F:\fork\sample\build\reports\ktlint\ktlintKotlinScriptCheck.txt
-build.gradle.kts
-settings.gradle.kts
