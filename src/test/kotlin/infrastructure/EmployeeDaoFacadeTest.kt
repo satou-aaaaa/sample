@@ -25,7 +25,7 @@ private class EmployeeDaoFacadeTest {
         )
         sut.insert(employee)
 
-        val actual = sut.selectOrNull(employeeId)
+        val actual = sut.selectBy(employeeId)
 
         assertEquals(employee, actual)
     }
@@ -58,7 +58,7 @@ private class EmployeeDaoFacadeTest {
         )
         sut.update(employee2)
 
-        val actual = sut.selectOrNull(employee1.employeeId)
+        val actual = sut.selectBy(employee1.employeeId)
 
         assertEquals(employee2, actual)
     }
