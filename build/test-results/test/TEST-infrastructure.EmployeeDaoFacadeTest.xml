@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="infrastructure.EmployeeDaoFacadeTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2022-11-26T15:54:09" hostname="DESKTOP-LHGU0ET" time="0.032">
+  <properties/>
+  <testcase name="複数回社員を追加した場合、最新のデータが検索できること()" classname="infrastructure.EmployeeDaoFacadeTest" time="0.024"/>
+  <testcase name="同じ社員を複数回追加しようとした場合は例外を投げる()" classname="infrastructure.EmployeeDaoFacadeTest" time="0.002"/>
+  <testcase name="追加した社員が検索できること()" classname="infrastructure.EmployeeDaoFacadeTest" time="0.001"/>
+  <testcase name="追加されていない社員をupdateしようとした場合には例外を投げる()" classname="infrastructure.EmployeeDaoFacadeTest" time="0.002"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
