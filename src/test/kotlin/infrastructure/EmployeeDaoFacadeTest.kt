@@ -31,6 +31,15 @@ private class EmployeeDaoFacadeTest {
     }
 
     @Test
+    fun `社員が存在しない場合は例外を投げること`() {
+        val notExistsEmployeeId = UUID.fromString("32d3c6b1-250a-42d2-ad8e-a4ff196cccb6")
+
+        assertThrows<IllegalStateException> {
+            sut.selectBy(notExistsEmployeeId)
+        }
+    }
+
+    @Test
     fun `複数回社員を追加した場合、最新のデータが検索できること`() {
         val employeeId = UUID.fromString("3e921828-3706-4b5f-844c-20dd0fd36603")
 
