@@ -88,7 +88,7 @@ class EmployeeDaoFacade(
         }
     }
 
-    fun selectOrNull(employeeId: UUID): Employee {
+    fun selectBy(employeeId: UUID): Employee {
         val employeeDto = employeeDao.selectOrNull(employeeId)
             ?: throw IllegalStateException("社員が存在しません。 employeeId => $employeeId")
         val nameDto = employeeNameDao.selectLatestOrNull(employeeId)

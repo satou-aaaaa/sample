@@ -25,9 +25,18 @@ private class EmployeeDaoFacadeTest {
         )
         sut.insert(employee)
 
-        val actual = sut.selectOrNull(employeeId)
+        val actual = sut.selectBy(employeeId)
 
         assertEquals(employee, actual)
+    }
+
+    @Test
+    fun `社員が存在しない場合は例外を投げること`() {
+        val notExistsEmployeeId = UUID.fromString("32d3c6b1-250a-42d2-ad8e-a4ff196cccb6")
+
+        assertThrows<IllegalStateException> {
+            sut.selectBy(notExistsEmployeeId)
+        }
     }
 
     @Test
@@ -49,7 +58,7 @@ private class EmployeeDaoFacadeTest {
         )
         sut.update(employee2)
 
-        val actual = sut.selectOrNull(employee1.employeeId)
+        val actual = sut.selectBy(employee1.employeeId)
 
         assertEquals(employee2, actual)
     }
