@@ -96,7 +96,7 @@ class EmployeeDaoFacade(
         val statusDto = employeeStatusDao.selectLatestOrNull(employeeId)
             ?: throw IllegalStateException("社員が存在しません。 employeeId => $employeeId")
 
-        if(statusDto.status == EmployeeStatus.DELETED){
+        if (statusDto.status == EmployeeStatus.DELETED) {
             throw IllegalStateException("社員が存在しません。 employeeId => $employeeId")
         }
 
@@ -110,7 +110,7 @@ class EmployeeDaoFacade(
         val existing = employeeStatusDao.selectLatestOrNull(employeeId)
             ?: throw IllegalStateException("社員が存在しません。 employeeId => $employeeId")
 
-        if(existing.status == EmployeeStatus.DELETED){
+        if (existing.status == EmployeeStatus.DELETED) {
             throw IllegalStateException("社員が存在しません。 employeeId => $employeeId")
         }
 
