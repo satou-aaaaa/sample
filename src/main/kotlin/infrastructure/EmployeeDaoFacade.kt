@@ -32,7 +32,7 @@ class EmployeeDaoFacade(
         employeeStatusDao.insert(
             EmployeeStatusDto(
                 employeeId = employee.employeeId,
-                status = employee.status,
+                status = EmployeeStatus.NOT_DELETED,
                 createdAt = LocalDateTime.now()
             )
         )
@@ -58,7 +58,7 @@ class EmployeeDaoFacade(
         employeeStatusDao.insert(
             EmployeeStatusDto(
                 employeeId = existingStatusDto.employeeId,
-                status = employee.status,
+                status = EmployeeStatus.NOT_DELETED,
                 createdAt = LocalDateTime.now()
             )
         )

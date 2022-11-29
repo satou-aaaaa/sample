@@ -8,7 +8,6 @@ import org.junit.jupiter.api.assertThrows
 import java.time.LocalDateTime
 import java.util.*
 
-
 private class EmployeeStatusDaoTest {
 
     private val employeeDao: EmployeeDao = EmployeeDao()
@@ -24,7 +23,7 @@ private class EmployeeStatusDaoTest {
     fun `insertしたデータがselectメソッドで検索できること`() {
         val dto = EmployeeStatusDto(
             employeeId = addedEmployeeId,
-            status = EmployeeStatus.RETIRED,
+            status = EmployeeStatus.DELETED,
             createdAt = LocalDateTime.of(2020, 1, 1, 1, 1),
         )
 
@@ -39,13 +38,13 @@ private class EmployeeStatusDaoTest {
     fun `複数件insertされていた場合、selectメソッドで最新のデータが返ってくること`() {
         val dto1 = EmployeeStatusDto(
             employeeId = addedEmployeeId,
-            status = EmployeeStatus.RETIRED,
+            status = EmployeeStatus.DELETED,
             createdAt = LocalDateTime.of(2020, 1, 1, 1, 1),
         )
         sut.insert(dto1)
         val dto2 = EmployeeStatusDto(
             employeeId = addedEmployeeId,
-            status = EmployeeStatus.RETIRED,
+            status = EmployeeStatus.DELETED,
             createdAt = LocalDateTime.of(2020, 1, 1, 1, 2),
         )
         sut.insert(dto2)
@@ -59,19 +58,19 @@ private class EmployeeStatusDaoTest {
     fun `複数件insertされており、かつ日時の指定をした場合、selectメソッドで指定された日時時点の最新のデータが返ってくること`() {
         val dto1 = EmployeeStatusDto(
             employeeId = addedEmployeeId,
-            status = EmployeeStatus.RETIRED,
+            status = EmployeeStatus.DELETED,
             createdAt = LocalDateTime.of(2020, 1, 1, 1, 1),
         )
         sut.insert(dto1)
         val dto2 = EmployeeStatusDto(
             employeeId = addedEmployeeId,
-            status = EmployeeStatus.ACTIVE_DUTY,
+            status = EmployeeStatus.NOT_DELETED,
             createdAt = LocalDateTime.of(2020, 1, 1, 1, 2),
         )
         sut.insert(dto2)
         val dto3 = EmployeeStatusDto(
             employeeId = addedEmployeeId,
-            status = EmployeeStatus.RETIRED,
+            status = EmployeeStatus.DELETED,
             createdAt = LocalDateTime.of(2020, 1, 1, 1, 3),
         )
         sut.insert(dto3)
@@ -101,7 +100,7 @@ private class EmployeeStatusDaoTest {
 
         val dto = EmployeeStatusDto(
             employeeId = notExistingEmployeeId,
-            status = EmployeeStatus.RETIRED,
+            status = EmployeeStatus.DELETED,
             createdAt = LocalDateTime.now(),
         )
 

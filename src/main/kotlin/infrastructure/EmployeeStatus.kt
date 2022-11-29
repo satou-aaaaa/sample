@@ -1,7 +1,7 @@
 package infrastructure
 
 enum class EmployeeStatus {
-    RETIRED,
-    ACTIVE_DUTY,
+    DELETED,
+    NOT_DELETED,
     ;
 }
