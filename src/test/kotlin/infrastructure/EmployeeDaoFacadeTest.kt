@@ -21,7 +21,6 @@ private class EmployeeDaoFacadeTest {
         val employee = Employee(
             employeeId = employeeId,
             name = "佐藤",
-            status = EmployeeStatus.ACTIVE_DUTY
         )
         sut.insert(employee)
 
@@ -46,7 +45,6 @@ private class EmployeeDaoFacadeTest {
         val employee1 = Employee(
             employeeId = employeeId,
             name = "佐藤",
-            status = EmployeeStatus.ACTIVE_DUTY
         )
         sut.insert(employee1)
 
@@ -54,7 +52,6 @@ private class EmployeeDaoFacadeTest {
 
         val employee2 = employee1.copy(
             name = "田中",
-            status = EmployeeStatus.RETIRED
         )
         sut.update(employee2)
 
@@ -70,7 +67,6 @@ private class EmployeeDaoFacadeTest {
         val employee = Employee(
             employeeId = employeeId,
             name = "佐藤",
-            status = EmployeeStatus.ACTIVE_DUTY
         )
         sut.insert(employee)
 
@@ -86,7 +82,6 @@ private class EmployeeDaoFacadeTest {
         val employee = Employee(
             employeeId = employeeId,
             name = "佐藤",
-            status = EmployeeStatus.ACTIVE_DUTY
         )
 
         assertThrows<IllegalStateException> {
