@@ -1,6 +1,5 @@
-package domein.model
+package domein.model.employee
 
-import infrastructure.EmployeeStatus
 import java.util.*
 
 data class Employee(

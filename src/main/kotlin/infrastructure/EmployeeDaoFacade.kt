@@ -1,7 +1,6 @@
 package infrastructure
 
-import domein.model.Employee
-import java.lang.Thread.sleep
+import domein.model.employee.Employee
 import java.time.LocalDateTime
 import java.util.UUID
 import kotlin.IllegalStateException
