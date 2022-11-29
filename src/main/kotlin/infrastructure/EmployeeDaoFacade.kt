@@ -90,14 +90,14 @@ class EmployeeDaoFacade(
 
     fun selectBy(employeeId: UUID): Employee {
         val employeeDto = employeeDao.selectOrNull(employeeId)
-            ?: throw IllegalStateException("社員が存在しません。 employeeId => $employeeId")
+            ?: throwEmployeeNotFound(employeeId)
         val nameDto = employeeNameDao.selectLatestOrNull(employeeId)
-            ?: throw IllegalStateException("社員が存在しません。 employeeId => $employeeId")
+            ?: throwEmployeeNotFound(employeeId)
         val statusDto = employeeStatusDao.selectLatestOrNull(employeeId)
-            ?: throw IllegalStateException("社員が存在しません。 employeeId => $employeeId")
+            ?: throwEmployeeNotFound(employeeId)
 
         if (statusDto.status == EmployeeStatus.DELETED) {
-            throw IllegalStateException("社員が存在しません。 employeeId => $employeeId")
+            throwEmployeeNotFound(employeeId)
         }
 
         return Employee(
@@ -106,12 +106,17 @@ class EmployeeDaoFacade(
         )
     }
 
+
+    private fun throwEmployeeNotFound(employeeId: UUID): Nothing {
+        throw IllegalStateException("社員が存在しません。 employeeId => $employeeId")
+    }
+
     fun delete(employeeId: UUID) {
         val existing = employeeStatusDao.selectLatestOrNull(employeeId)
-            ?: throw IllegalStateException("社員が存在しません。 employeeId => $employeeId")
+            ?: throwEmployeeNotFound(employeeId)
 
         if (existing.status == EmployeeStatus.DELETED) {
-            throw IllegalStateException("社員が存在しません。 employeeId => $employeeId")
+            throwEmployeeNotFound(employeeId)
         }
 
         val dto = EmployeeStatusDto(
