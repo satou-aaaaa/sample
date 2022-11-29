@@ -1,6 +1,7 @@
 package infrastructure
 
 import domein.model.Employee
+import java.lang.Thread.sleep
 import java.time.LocalDateTime
 import java.util.UUID
 import kotlin.IllegalStateException
@@ -96,10 +97,29 @@ class EmployeeDaoFacade(
         val statusDto = employeeStatusDao.selectLatestOrNull(employeeId)
             ?: throw IllegalStateException("社員が存在しません。 employeeId => $employeeId")
 
+        if(statusDto.status == EmployeeStatus.DELETED){
+            throw IllegalStateException("社員が存在しません。 employeeId => $employeeId")
+        }
+
         return Employee(
             employeeId = employeeDto.employeeId,
             name = nameDto.name,
-            status = statusDto.status
         )
+    }
+
+    fun delete(employeeId: UUID) {
+        val existing = employeeStatusDao.selectLatestOrNull(employeeId)
+            ?: throw IllegalStateException("社員が存在しません。 employeeId => $employeeId")
+
+        if(existing.status == EmployeeStatus.DELETED){
+            throw IllegalStateException("社員が存在しません。 employeeId => $employeeId")
+        }
+
+        val dto = EmployeeStatusDto(
+            employeeId = employeeId,
+            status = EmployeeStatus.DELETED,
+            createdAt = LocalDateTime.now()
+        )
+        employeeStatusDao.insert(dto)
     }
 }
