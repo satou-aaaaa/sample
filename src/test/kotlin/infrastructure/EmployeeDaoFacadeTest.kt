@@ -40,7 +40,7 @@ private class EmployeeDaoFacadeTest {
     }
 
     @Test
-    fun `複数回社員を追加した場合、最新のデータが検索できること`() {
+    fun `データを更新した場合、最新のデータが検索できること`() {
         val employeeId = UUID.fromString("3e921828-3706-4b5f-844c-20dd0fd36603")
 
         val employee1 = Employee(
