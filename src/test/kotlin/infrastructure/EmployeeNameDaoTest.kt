@@ -8,7 +8,6 @@ import org.junit.jupiter.api.assertThrows
 import java.time.LocalDateTime
 import java.util.*
 
-
 private class EmployeeNameDaoTest {
 
     private val employeeDao: EmployeeDao = EmployeeDao()
@@ -25,7 +24,7 @@ private class EmployeeNameDaoTest {
         val dto = EmployeeNameDto(
             employeeId = addedEmployeeId,
             name = "佐藤",
-            createdAt = LocalDateTime.of(2020, 1, 1, 1, 1),
+            createdAt = LocalDateTime.of(2020, 1, 1, 1, 1)
         )
 
         sut.insert(dto)
@@ -40,13 +39,13 @@ private class EmployeeNameDaoTest {
         val dto1 = EmployeeNameDto(
             employeeId = addedEmployeeId,
             name = "佐藤",
-            createdAt = LocalDateTime.of(2020, 1, 1, 1, 1),
+            createdAt = LocalDateTime.of(2020, 1, 1, 1, 1)
         )
         sut.insert(dto1)
         val dto2 = EmployeeNameDto(
             employeeId = addedEmployeeId,
             name = "田中",
-            createdAt = LocalDateTime.of(2020, 1, 1, 1, 2),
+            createdAt = LocalDateTime.of(2020, 1, 1, 1, 2)
         )
         sut.insert(dto2)
 
@@ -60,19 +59,19 @@ private class EmployeeNameDaoTest {
         val dto1 = EmployeeNameDto(
             employeeId = addedEmployeeId,
             name = "佐藤",
-            createdAt = LocalDateTime.of(2020, 1, 1, 1, 1),
+            createdAt = LocalDateTime.of(2020, 1, 1, 1, 1)
         )
         sut.insert(dto1)
         val dto2 = EmployeeNameDto(
             employeeId = addedEmployeeId,
             name = "田中",
-            createdAt = LocalDateTime.of(2020, 1, 1, 1, 2),
+            createdAt = LocalDateTime.of(2020, 1, 1, 1, 2)
         )
         sut.insert(dto2)
         val dto3 = EmployeeNameDto(
             employeeId = addedEmployeeId,
             name = "中村",
-            createdAt = LocalDateTime.of(2020, 1, 1, 1, 3),
+            createdAt = LocalDateTime.of(2020, 1, 1, 1, 3)
         )
         sut.insert(dto3)
 
@@ -80,7 +79,7 @@ private class EmployeeNameDaoTest {
 
         val actual = sut.selectOrNull(
             employeeId = addedEmployeeId,
-            time = searchDateTime,
+            time = searchDateTime
         )
 
         assertEquals(dto2, actual)
@@ -102,7 +101,7 @@ private class EmployeeNameDaoTest {
         val dto = EmployeeNameDto(
             employeeId = notExistingEmployeeId,
             name = "佐藤",
-            createdAt = LocalDateTime.now(),
+            createdAt = LocalDateTime.now()
         )
 
         assertThrows<IllegalStateException> {
@@ -114,7 +113,7 @@ private class EmployeeNameDaoTest {
         val addedEmployeeId: UUID = UUID.fromString("67b789c1-3f36-4300-9219-da3f18f22c16")
         val addedEmployeeDto = EmployeeDto(
             employeeId = addedEmployeeId,
-            createdAt = LocalDateTime.now(),
+            createdAt = LocalDateTime.now()
         )
     }
 }

@@ -3,20 +3,20 @@ package infrastructure
 import java.time.LocalDateTime
 import java.util.*
 
-
 class EmployeeDao {
 
-    private var employee:MutableMap<UUID,LocalDateTime> = mutableMapOf()
+    private var employee: MutableMap<UUID, LocalDateTime> = mutableMapOf()
 
     fun insert(dto: EmployeeDto) {
+        LocalDateTime.now()
         val existing = this.selectOrNull(dto.employeeId)
         if (existing != null) {
             throw IllegalStateException("既に存在しています")
         }
 
         employee.put(
-            key =dto.employeeId,
-            value = dto.createdAt,
+            key = dto.employeeId,
+            value = dto.createdAt
         )
     }
 
@@ -26,7 +26,7 @@ class EmployeeDao {
 
         return EmployeeDto(
             employeeId = employeeId,
-            createdAt = createdAt,
+            createdAt = createdAt
         )
     }
 }

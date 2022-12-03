@@ -20,7 +20,7 @@ private class EmployeeDaoFacadeTest {
 
         val employee = Employee(
             employeeId = employeeId,
-            name = "佐藤",
+            name = "佐藤"
         )
         sut.insert(employee)
 
@@ -44,14 +44,14 @@ private class EmployeeDaoFacadeTest {
 
         val employee1 = Employee(
             employeeId = employeeId,
-            name = "佐藤",
+            name = "佐藤"
         )
         sut.insert(employee1)
 
         sleep(1)
 
         val employee2 = employee1.copy(
-            name = "田中",
+            name = "田中"
         )
         sut.update(employee2)
 
@@ -66,7 +66,7 @@ private class EmployeeDaoFacadeTest {
 
         val employee = Employee(
             employeeId = employeeId,
-            name = "佐藤",
+            name = "佐藤"
         )
         sut.insert(employee)
 
@@ -81,7 +81,7 @@ private class EmployeeDaoFacadeTest {
 
         val employee = Employee(
             employeeId = employeeId,
-            name = "佐藤",
+            name = "佐藤"
         )
 
         assertThrows<IllegalStateException> {
@@ -95,7 +95,7 @@ private class EmployeeDaoFacadeTest {
 
         val employee = Employee(
             employeeId = employeeId,
-            name = "佐藤",
+            name = "佐藤"
         )
 
         sut.insert(employee)
@@ -115,7 +115,7 @@ private class EmployeeDaoFacadeTest {
 
         val inserting = Employee(
             employeeId = employeeId,
-            name = "佐藤",
+            name = "佐藤"
         )
 
         sut.insert(inserting)
@@ -126,7 +126,7 @@ private class EmployeeDaoFacadeTest {
 
         val updating = Employee(
             employeeId = employeeId,
-            name = "田中",
+            name = "田中"
         )
 
         sut.update(updating)
@@ -142,7 +142,7 @@ private class EmployeeDaoFacadeTest {
 
         val inserting = Employee(
             employeeId = employeeId,
-            name = "佐藤",
+            name = "佐藤"
         )
 
         sut.insert(inserting)
@@ -162,7 +162,7 @@ private class EmployeeDaoFacadeTest {
 
         val inserting = Employee(
             employeeId = employeeId,
-            name = "佐藤",
+            name = "佐藤"
         )
 
         sut.insert(inserting)
@@ -184,5 +184,4 @@ private class EmployeeDaoFacadeTest {
             sut.delete(employeeId)
         }
     }
-
 }

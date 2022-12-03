@@ -1,7 +1,6 @@
 package infrastructure
 
 import domein.model.employee.Employee
-import domein.model.employee.EmployeeRepository
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.assertThrows
@@ -23,7 +22,7 @@ private class EmployeeRepositoryTest {
 
         val employee = Employee(
             employeeId = employeeId,
-            name = "佐藤",
+            name = "佐藤"
         )
         sut.add(employee)
 
@@ -47,14 +46,14 @@ private class EmployeeRepositoryTest {
 
         val employee1 = Employee(
             employeeId = employeeId,
-            name = "佐藤",
+            name = "佐藤"
         )
         sut.add(employee1)
 
         sleep(1)
 
         val employee2 = employee1.copy(
-            name = "田中",
+            name = "田中"
         )
         sut.replace(employee2)
 
@@ -69,7 +68,7 @@ private class EmployeeRepositoryTest {
 
         val employee = Employee(
             employeeId = employeeId,
-            name = "佐藤",
+            name = "佐藤"
         )
         sut.add(employee)
 
@@ -84,7 +83,7 @@ private class EmployeeRepositoryTest {
 
         val employee = Employee(
             employeeId = employeeId,
-            name = "佐藤",
+            name = "佐藤"
         )
 
         assertThrows<IllegalStateException> {
@@ -98,7 +97,7 @@ private class EmployeeRepositoryTest {
 
         val employee = Employee(
             employeeId = employeeId,
-            name = "佐藤",
+            name = "佐藤"
         )
 
         sut.add(employee)
@@ -118,7 +117,7 @@ private class EmployeeRepositoryTest {
 
         val inserting = Employee(
             employeeId = employeeId,
-            name = "佐藤",
+            name = "佐藤"
         )
 
         sut.add(inserting)
@@ -129,7 +128,7 @@ private class EmployeeRepositoryTest {
 
         val updating = Employee(
             employeeId = employeeId,
-            name = "田中",
+            name = "田中"
         )
 
         sut.replace(updating)
@@ -145,7 +144,7 @@ private class EmployeeRepositoryTest {
 
         val inserting = Employee(
             employeeId = employeeId,
-            name = "佐藤",
+            name = "佐藤"
         )
 
         sut.add(inserting)
@@ -165,7 +164,7 @@ private class EmployeeRepositoryTest {
 
         val inserting = Employee(
             employeeId = employeeId,
-            name = "佐藤",
+            name = "佐藤"
         )
 
         sut.add(inserting)

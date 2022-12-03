@@ -24,7 +24,7 @@ private class EmployeeStatusDaoTest {
         val dto = EmployeeStatusDto(
             employeeId = addedEmployeeId,
             status = EmployeeStatus.DELETED,
-            createdAt = LocalDateTime.of(2020, 1, 1, 1, 1),
+            createdAt = LocalDateTime.of(2020, 1, 1, 1, 1)
         )
 
         sut.insert(dto)
@@ -39,13 +39,13 @@ private class EmployeeStatusDaoTest {
         val dto1 = EmployeeStatusDto(
             employeeId = addedEmployeeId,
             status = EmployeeStatus.DELETED,
-            createdAt = LocalDateTime.of(2020, 1, 1, 1, 1),
+            createdAt = LocalDateTime.of(2020, 1, 1, 1, 1)
         )
         sut.insert(dto1)
         val dto2 = EmployeeStatusDto(
             employeeId = addedEmployeeId,
             status = EmployeeStatus.DELETED,
-            createdAt = LocalDateTime.of(2020, 1, 1, 1, 2),
+            createdAt = LocalDateTime.of(2020, 1, 1, 1, 2)
         )
         sut.insert(dto2)
 
@@ -59,19 +59,19 @@ private class EmployeeStatusDaoTest {
         val dto1 = EmployeeStatusDto(
             employeeId = addedEmployeeId,
             status = EmployeeStatus.DELETED,
-            createdAt = LocalDateTime.of(2020, 1, 1, 1, 1),
+            createdAt = LocalDateTime.of(2020, 1, 1, 1, 1)
         )
         sut.insert(dto1)
         val dto2 = EmployeeStatusDto(
             employeeId = addedEmployeeId,
             status = EmployeeStatus.NOT_DELETED,
-            createdAt = LocalDateTime.of(2020, 1, 1, 1, 2),
+            createdAt = LocalDateTime.of(2020, 1, 1, 1, 2)
         )
         sut.insert(dto2)
         val dto3 = EmployeeStatusDto(
             employeeId = addedEmployeeId,
             status = EmployeeStatus.DELETED,
-            createdAt = LocalDateTime.of(2020, 1, 1, 1, 3),
+            createdAt = LocalDateTime.of(2020, 1, 1, 1, 3)
         )
         sut.insert(dto3)
 
@@ -79,7 +79,7 @@ private class EmployeeStatusDaoTest {
 
         val actual = sut.selectOrNull(
             employeeId = addedEmployeeId,
-            time = searchDateTime,
+            time = searchDateTime
         )
 
         assertEquals(dto2, actual)
@@ -101,7 +101,7 @@ private class EmployeeStatusDaoTest {
         val dto = EmployeeStatusDto(
             employeeId = notExistingEmployeeId,
             status = EmployeeStatus.DELETED,
-            createdAt = LocalDateTime.now(),
+            createdAt = LocalDateTime.now()
         )
 
         assertThrows<IllegalStateException> {
@@ -113,7 +113,7 @@ private class EmployeeStatusDaoTest {
         val addedEmployeeId: UUID = UUID.fromString("7d2830ec-07fa-4e01-8882-97d67f0db97a")
         val addedEmployeeDto = EmployeeDto(
             employeeId = addedEmployeeId,
-            createdAt = LocalDateTime.now(),
+            createdAt = LocalDateTime.now()
         )
     }
 }

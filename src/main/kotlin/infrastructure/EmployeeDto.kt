@@ -5,5 +5,5 @@ import java.util.*
 
 data class EmployeeDto(
     val employeeId: UUID,
-    val createdAt:LocalDateTime,
+    val createdAt: LocalDateTime
 )

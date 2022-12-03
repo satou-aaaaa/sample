@@ -17,7 +17,7 @@ class EmployeeDaoFacade(
         employeeDao.insert(
             EmployeeDto(
                 employeeId = employee.employeeId,
-                createdAt = LocalDateTime.now(),
+                createdAt = LocalDateTime.now()
             )
         )
 
@@ -102,10 +102,9 @@ class EmployeeDaoFacade(
 
         return Employee(
             employeeId = employeeDto.employeeId,
-            name = nameDto.name,
+            name = nameDto.name
         )
     }
-
 
     private fun throwEmployeeNotFound(employeeId: UUID): Nothing {
         throw IllegalStateException("社員が存在しません。 employeeId => $employeeId")
