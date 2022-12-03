@@ -1,0 +1,10 @@
+
+type Query{
+
+    fetchEmployee:Employee
+}
+
+type Employee{
+    employeeId:ID!
+    name:String!
+}
