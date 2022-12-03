@@ -28,13 +28,12 @@ jobs:
     steps:
       - checkout
       - run: gradle dependencies
-        
+
   test:
       # run tests!
       - run: ./gradlew test
 
 workflows:
-  build-workflow:
     jobs:
       - build
       - test
