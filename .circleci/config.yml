@@ -30,7 +30,9 @@ jobs:
       - run: gradle dependencies
 
   test:
-      # run tests!
+    steps:
+      - checkout
+     # run tests!
       - run: ./gradlew test
 
 workflows:
