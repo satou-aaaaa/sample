@@ -50,7 +50,7 @@ class EmployeeDaoFacade(
 
         val existingNameDto = employeeNameDao.selectLatestOrNull(employee.employeeId)
             ?: throw IllegalStateException("社員の氏名が存在しません。")
-        insertIfNameIsNotSame(existingNameDto, employee)
+        insertIfNameChanged(existingNameDto, employee)
 
         val existingStatusDto = employeeStatusDao.selectLatestOrNull(employee.employeeId)
             ?: throw IllegalStateException("社員のstatusが存在しません。")
@@ -64,7 +64,7 @@ class EmployeeDaoFacade(
         )
     }
 
-    private fun insertIfNameIsNotSame(existingNameDto: EmployeeNameDto, employee: Employee) {
+    private fun insertIfNameChanged(existingNameDto: EmployeeNameDto, employee: Employee) {
         if (existingNameDto.name != employee.name) {
             employeeNameDao.insert(
                 EmployeeNameDto(
