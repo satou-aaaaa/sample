@@ -8,7 +8,7 @@ class EmployeeRepositoryImpl(
     private val employeeDaoFacade: EmployeeDaoFacade
 ) : EmployeeRepository {
 
-    override fun selectBy(employeeId: UUID): Employee {
+    override fun resolveBy(employeeId: UUID): Employee {
         return employeeDaoFacade.selectBy(employeeId)
     }
 

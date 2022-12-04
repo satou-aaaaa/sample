@@ -4,7 +4,7 @@ import java.util.UUID
 
 interface EmployeeRepository {
 
-    fun selectBy(employeeId: UUID): Employee
+    fun resolveBy(employeeId: UUID): Employee
 
     fun add(employee: Employee)
 

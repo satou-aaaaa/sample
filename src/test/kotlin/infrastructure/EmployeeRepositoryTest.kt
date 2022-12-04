@@ -26,7 +26,7 @@ private class EmployeeRepositoryTest {
         )
         sut.add(employee)
 
-        val actual = sut.selectBy(employeeId)
+        val actual = sut.resolveBy(employeeId)
 
         assertEquals(employee, actual)
     }
@@ -36,7 +36,7 @@ private class EmployeeRepositoryTest {
         val notExistsEmployeeId = UUID.fromString("4b1056a0-1aa8-4738-b006-5f87f33f6adf")
 
         assertThrows<IllegalStateException> {
-            sut.selectBy(notExistsEmployeeId)
+            sut.resolveBy(notExistsEmployeeId)
         }
     }
 
@@ -57,7 +57,7 @@ private class EmployeeRepositoryTest {
         )
         sut.replace(employee2)
 
-        val actual = sut.selectBy(employee1.employeeId)
+        val actual = sut.resolveBy(employee1.employeeId)
 
         assertEquals(employee2, actual)
     }
@@ -107,7 +107,7 @@ private class EmployeeRepositoryTest {
         sut.remove(employee.employeeId)
 
         assertThrows<IllegalStateException> {
-            sut.selectBy(employee.employeeId)
+            sut.resolveBy(employee.employeeId)
         }
     }
 
@@ -134,7 +134,7 @@ private class EmployeeRepositoryTest {
         sut.replace(updating)
 
         assertThrows<IllegalStateException> {
-            sut.selectBy(updating.employeeId)
+            sut.resolveBy(updating.employeeId)
         }
     }
 
