@@ -1,7 +1,7 @@
 
 type Query{
 
-    fetchEmployee:Employee
+    fetchEmployee(employeeId:ID!):Employee
 }
 
 type Employee{

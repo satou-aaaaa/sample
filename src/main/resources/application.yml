@@ -1,0 +1,5 @@
+graphiql:
+  enabled: true
+  mapping: /graphiql
+  endpoint:
+    graphql: /graphql
