@@ -3,7 +3,6 @@ version: 2.1
 # このプロジェクトで実行するジョブの定義
 jobs:
   build:
-    docker:
     steps:
       - checkout
       - run: gradle build
