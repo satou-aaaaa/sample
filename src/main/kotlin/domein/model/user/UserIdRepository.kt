@@ -4,7 +4,7 @@ import java.util.*
 
 interface UserIdRepository {
 
-    fun addIfAbsent(userId: UUID)
+    fun add(userId: UUID)
 
     fun validatedIdExists(userId: UUID)
 }

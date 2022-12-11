@@ -2,7 +2,7 @@ package usecase
 
 import domein.model.user.UserIdRepository
 import org.springframework.stereotype.Service
-import java.util.UUID
+import java.util.*
 
 @Service
 class CreateUserId(
@@ -12,7 +12,7 @@ class CreateUserId(
     fun handle(): UUID {
         val userId = UUID.randomUUID()
 
-        userIdRepository.addIfAbsent(userId)
+        userIdRepository.add(userId)
 
         return userId
     }
