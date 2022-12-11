@@ -14,7 +14,7 @@ class RegisterRealName(
     fun handle(input: RealNameRegisterInputData) {
         val userId = input.userId
 
-        userIdRepository.validatedIdExists(userId)
+        userIdRepository.validatedExists(userId)
 
         realNameRepository.add(
             userId = userId,
