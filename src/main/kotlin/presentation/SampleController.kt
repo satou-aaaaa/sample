@@ -9,7 +9,7 @@ import java.util.*
 class SampleController {
 
     @QueryMapping
-    fun fetchEmployee(@Argument employeeId:UUID): EmployeeQueryDto {
+    fun fetchEmployee(@Argument employeeId: UUID): EmployeeQueryDto {
         println("fetchEmployee coll")
         return EmployeeQueryDto(
             employeeId = UUID.fromString("750bdac6-7b62-4bd0-b2ce-d5648f87979e"),

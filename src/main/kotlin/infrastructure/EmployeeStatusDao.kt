@@ -17,9 +17,9 @@ class EmployeeStatusDao(
 
     private fun validatedEmployeeTable(dto: EmployeeStatusDto) {
         (
-            employeeDao.selectOrNull(dto.employeeId)
-                ?: throw IllegalStateException("employeeIdが存在しません。")
-            )
+                employeeDao.selectOrNull(dto.employeeId)
+                    ?: throw IllegalStateException("employeeIdが存在しません。")
+                )
     }
 
     fun selectLatestOrNull(employeeId: UUID): EmployeeStatusDto? {
@@ -34,7 +34,7 @@ class EmployeeStatusDao(
     fun selectOrNull(employeeId: UUID, time: LocalDateTime): EmployeeStatusDto? {
         val existing = employeeStatusTable.filter {
             it.employeeId == employeeId &&
-                it.createdAt < time
+                    it.createdAt < time
         }.maxByOrNull {
             it.createdAt
         }
