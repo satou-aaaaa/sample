@@ -40,20 +40,19 @@ class EmployeeDaoFacade(
     private fun validatedEmployeeNotAdded(employee: Employee) {
         val existing = employeeDao.selectOrNull(employee.employeeId)
         if (existing != null) {
-            throw IllegalStateException("既に追加されている社員です。")
+            throw IllegalStateException("既に追加されている社員です。employeeId => ${employee.employeeId}")
         }
     }
 
     fun update(employee: Employee) {
-        insertEmployeeDtoIfNotExists(employee)
+        insertEmployeeDtoIfNotExists(employee.employeeId)
+        insertIfNameChanged(employee.employeeId, employee.name)
+        insertStatusNotDeleted(employee.employeeId)
+    }
 
-        val existingNameDto = employeeNameDao.selectLatestOrNull(employee.employeeId)
-            ?: throw IllegalStateException("社員の氏名が存在しません。")
-        insertIfNameChanged(existingNameDto, employee)
-
-        val existingStatusDto = employeeStatusDao.selectLatestOrNull(employee.employeeId)
-            ?: throw IllegalStateException("社員のstatusが存在しません。")
-
+    private fun insertStatusNotDeleted(employeeId: UUID) {
+        val existingStatusDto = employeeStatusDao.selectLatestOrNull(employeeId)
+            ?: throw IllegalStateException("社員のstatusが存在しません。employeeId => $employeeId")
         employeeStatusDao.insert(
             EmployeeStatusDto(
                 employeeId = existingStatusDto.employeeId,
@@ -63,24 +62,26 @@ class EmployeeDaoFacade(
         )
     }
 
-    private fun insertIfNameChanged(existingNameDto: EmployeeNameDto, employee: Employee) {
-        if (existingNameDto.name != employee.name) {
+    private fun insertIfNameChanged(employeeId: UUID, name: String) {
+        val existingNameDto = employeeNameDao.selectLatestOrNull(employeeId)
+            ?: throw IllegalStateException("社員の氏名が存在しません。employeeId => $employeeId")
+        if (existingNameDto.name != name) {
             employeeNameDao.insert(
                 EmployeeNameDto(
                     employeeId = existingNameDto.employeeId,
-                    name = employee.name,
+                    name = name,
                     createdAt = LocalDateTime.now()
                 )
             )
         }
     }
 
-    private fun insertEmployeeDtoIfNotExists(employee: Employee) {
-        val existingEmployeeDto = employeeDao.selectOrNull(employee.employeeId)
+    private fun insertEmployeeDtoIfNotExists(employeeId: UUID) {
+        val existingEmployeeDto = employeeDao.selectOrNull(employeeId)
         if (existingEmployeeDto == null) {
             employeeDao.insert(
                 EmployeeDto(
-                    employeeId = employee.employeeId,
+                    employeeId = employeeId,
                     createdAt = LocalDateTime.now()
                 )
             )
