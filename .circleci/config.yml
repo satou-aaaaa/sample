@@ -1,10 +1,13 @@
 version: 2.1
 
+orbs:
+  gradle: circleci/gradle@2.1
+
 jobs:
   build:
-    orbs:
-      gradle: circleci/gradle@2.1
+    docker:
+      - image: amazoncorretto
     steps:
       - checkout
-      - run: gradle build
-      - run: gradle test
+      - run: ./gradlew build
+      - run: ./gradlew test
