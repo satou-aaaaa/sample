@@ -2,7 +2,7 @@ version: 2.1
 jobs:
   build:
     docker:
-      - image: circleci/amazoncorretto:17
+      - image: circleci/amazoncorretto
     steps:
       - checkout
       - run: gradle build -x test
