@@ -1,6 +1,5 @@
 version: 2.1
 
-# このプロジェクトで実行するジョブの定義
 jobs:
   build:
     steps:
@@ -10,9 +9,9 @@ jobs:
     steps:
       - checkout
       - run: gradle test
-
 workflows:
   build_and_test:
     jobs:
       - build
       - test
+
