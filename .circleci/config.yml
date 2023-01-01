@@ -1,6 +1,8 @@
 version: '2.1'
 orbs:
   gradle: circleci/gradle@2.1
+docker:
+  image: amazoncorretto
 workflows:
   checkout-build-test:
     jobs:
