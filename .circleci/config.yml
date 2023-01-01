@@ -5,7 +5,6 @@ jobs:
       - image: circleci/openjdk
     steps:
       - checkout
-      - run: gradle dependencies
       - run: gradle build -x test
       - run:
           name: run test
