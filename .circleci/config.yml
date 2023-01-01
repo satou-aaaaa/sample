@@ -2,7 +2,7 @@ version: 2.1
 jobs:
   build:
     docker:
-      - image: circleci/openjdk:17
+      - image: circleci/amazoncorretto:17
     steps:
       - checkout
       - run: gradle build -x test
