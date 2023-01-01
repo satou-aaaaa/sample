@@ -2,14 +2,9 @@ version: 2.1
 
 jobs:
   build:
+    docker:
+      - image: amazoncorretto
     steps:
       - checkout
       - run: ./gradlew build
-  test:
-    steps:
-      - checkout
       - run: ./gradlew test
-workflows:
-  jobs:
-    - build
-    - test
