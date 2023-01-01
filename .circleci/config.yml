@@ -4,11 +4,11 @@ jobs:
   build:
     steps:
       - checkout
-      - run: gradle build
+      - run: ./gradlew build
   test:
     steps:
       - checkout
-      - run: gradle test
+      - run: ./gradlew test
 workflows:
   build_and_test:
     jobs:
