@@ -1,11 +1,17 @@
 version: 2.1
+
 jobs:
   build:
     docker:
-      - image: circleci/amazoncorretto
+      - image: adoptopenjdk
     steps:
       - checkout
-      - run: gradle build -x test
-      - run:
-          name: run test
-          command: gradle test
+      - run: ./gradlew build
+  test:
+    steps:
+      - checkout
+      - run: ./gradlew test
+workflows:
+  jobs:
+    - build
+    - test
