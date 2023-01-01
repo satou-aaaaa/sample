@@ -1,5 +1,8 @@
 version: 2.1
 
+orbs:
+  gradle: circleci/gradle@x.y
+
 jobs:
   build:
     docker:
