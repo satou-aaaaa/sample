@@ -1,5 +1,5 @@
 package domein.model.examinee
 
-interface PassedSecondarySelectionRepository{
+interface PassedSecondarySelectionRepository {
 
 }

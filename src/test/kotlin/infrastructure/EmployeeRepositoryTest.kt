@@ -4,7 +4,6 @@ import domein.model.employee.Employee
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.assertThrows
-import java.lang.IllegalStateException
 import java.lang.Thread.sleep
 import java.util.*
 
