@@ -11,6 +11,7 @@ private class TireTest {
         val actual = Tire.create("tire")
         val expect = Tire.create("tire")
 
+        assertEquals(expect.carId,actual.carId)
         assertNotEquals(expect.tireId,actual.tireId)
         assertEquals(expect.value,actual.value)
     }
