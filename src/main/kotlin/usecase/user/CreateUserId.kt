@@ -1,4 +1,4 @@
-package usecase
+package usecase.user
 
 import domein.model.user.UserIdRepository
 import org.springframework.stereotype.Service
