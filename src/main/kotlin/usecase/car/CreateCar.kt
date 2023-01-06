@@ -13,11 +13,9 @@ class CreateCar(
 ) {
 
     fun handle(input: CreateCarInputData) {
-        val carId = UUID.randomUUID()
         val tire = Tire.create(input.tire)
 
         val car = Car.create(
-            carId = carId,
             tire = tire,
         )
         carRepository.add(car)
