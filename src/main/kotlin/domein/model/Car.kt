@@ -1,7 +1,7 @@
 package domein.model
 
-data class Car(
-    val tire:String,
+data class Car private constructor(
+    private val tire:String,
 ) {
 
     companion object {
