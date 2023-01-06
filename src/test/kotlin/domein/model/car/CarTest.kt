@@ -14,4 +14,14 @@ private class CarTest {
 
         assertEquals(expect,actual)
     }
+
+    @Test
+    fun `create tire method return instance as expect`() {
+        val tire = Tire("tire")
+        val actual = Car.create(tire)
+        val expect = Car.create(tire)
+
+        assertEquals(expect,actual)
+    }
+
 }
