@@ -4,8 +4,10 @@ import domein.model.car.Car
 import domein.model.car.CarRepository
 import domein.model.car.Tire
 import domein.model.car.TireRepository
+import org.springframework.stereotype.Service
 import java.util.*
 
+@Service
 class CreateCar(
     private val tireRepository: TireRepository,
     private val carRepository: CarRepository,
