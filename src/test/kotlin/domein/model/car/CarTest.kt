@@ -20,6 +20,7 @@ private class CarTest {
             tire = tire,
         )
 
+        assertEquals(expect.carId,actual.carId)
         assertEquals(expect.tire,actual.tire)
     }
 
