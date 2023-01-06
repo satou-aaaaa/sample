@@ -1,4 +1,4 @@
-package domein.model
+package domein.model.car
 
 data class Car private constructor(
     private val tire:String,
