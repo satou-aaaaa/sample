@@ -9,7 +9,8 @@ class Car private constructor(
 
     companion object {
 
-        fun create(carId:UUID,tire: Tire): Car {
+        fun create(tire: Tire): Car {
+            val carId =UUID.randomUUID()
             return Car(carId,tire)
         }
     }
