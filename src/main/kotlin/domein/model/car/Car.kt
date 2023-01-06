@@ -1,12 +1,12 @@
 package domein.model.car
 
-data class Car private constructor(
-    private val tire:String,
+class Car private constructor(
+    val tire:Tire,
 ) {
 
     companion object {
 
-        fun create(tire: String): Car {
+        fun create(tire: Tire): Car {
             return Car(tire)
         }
     }

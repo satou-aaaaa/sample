@@ -9,19 +9,11 @@ private class CarTest {
 
     @Test
     fun `create method return instance as expect`() {
-        val actual = Car.create("tire")
-        val expect = Car.create("tire")
-
-        assertEquals(expect,actual)
-    }
-
-    @Test
-    fun `create tire method return instance as expect`() {
         val tire = Tire("tire")
         val actual = Car.create(tire)
         val expect = Car.create(tire)
 
-        assertEquals(expect,actual)
+        assertEquals(expect.tire,actual.tire)
     }
 
 }
