@@ -1,6 +1,5 @@
 package domein.model.car
 
-import domein.model.car.Car
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
 
