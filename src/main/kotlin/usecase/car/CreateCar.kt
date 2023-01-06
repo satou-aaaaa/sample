@@ -9,14 +9,12 @@ import java.util.*
 
 @Service
 class CreateCar(
-    private val tireRepository: TireRepository,
     private val carRepository: CarRepository,
 ) {
 
     fun handle(input: CreateCarInputData) {
         val carId = UUID.randomUUID()
         val tire = Tire.create(carId,input.tire)
-        tireRepository.add(tire)
 
         val car = Car.create(
             carId = carId,
