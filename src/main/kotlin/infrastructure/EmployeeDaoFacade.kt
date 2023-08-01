@@ -2,7 +2,7 @@ package infrastructure
 
 import domein.model.employee.Employee
 import java.time.LocalDateTime
-import java.util.*
+import java.util.UUID
 
 class EmployeeDaoFacade(
     private val employeeDao: EmployeeDao

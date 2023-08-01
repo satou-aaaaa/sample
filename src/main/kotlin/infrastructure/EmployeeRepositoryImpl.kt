@@ -2,7 +2,7 @@ package infrastructure
 
 import domein.model.employee.Employee
 import domein.model.employee.EmployeeRepository
-import java.util.*
+import java.util.UUID
 
 class EmployeeRepositoryImpl(
     private val employeeDaoFacade: EmployeeDaoFacade

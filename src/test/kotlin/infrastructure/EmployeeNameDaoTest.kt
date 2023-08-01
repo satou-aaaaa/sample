@@ -6,7 +6,7 @@ import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.assertThrows
 import java.time.LocalDateTime
-import java.util.*
+import java.util.UUID
 
 private class EmployeeNameDaoTest {
 

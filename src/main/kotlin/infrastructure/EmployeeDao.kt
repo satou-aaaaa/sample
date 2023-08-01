@@ -1,7 +1,7 @@
 package infrastructure
 
 import java.time.LocalDateTime
-import java.util.*
+import java.util.UUID
 
 class EmployeeDao {
 

@@ -1,6 +1,6 @@
 package domein.model.assignment
 
-import java.util.*
+import java.util.UUID
 
 data class Assignment(
     val assignmentId: UUID,

@@ -1,6 +1,6 @@
 package domein.model.employee
 
-import java.util.*
+import java.util.UUID
 
 interface EmployeeRepository {
 
