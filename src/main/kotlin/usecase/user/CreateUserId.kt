@@ -6,7 +6,7 @@ import java.util.UUID
 
 @Service
 class CreateUserId(
-    private val userIdRepository: UserIdRepository,
+    private val userIdRepository: UserIdRepository
 ) {
 
     fun handle(): UUID {

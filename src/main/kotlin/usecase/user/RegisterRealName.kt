@@ -8,7 +8,7 @@ import java.util.UUID
 @Service
 class RegisterRealName(
     private val userIdRepository: UserIdRepository,
-    private val realNameRepository: UserRealNameRepository,
+    private val realNameRepository: UserRealNameRepository
 ) {
 
     fun handle(input: RealNameRegisterInputData) {
@@ -18,12 +18,12 @@ class RegisterRealName(
 
         realNameRepository.add(
             userId = userId,
-            realName = input.realName,
+            realName = input.realName
         )
     }
 }
 
 data class RealNameRegisterInputData(
     val userId: UUID,
-    val realName: String,
+    val realName: String
 )

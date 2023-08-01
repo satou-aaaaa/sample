@@ -10,10 +10,10 @@ private class CarTest {
     fun `create method return instance as expect`() {
         val tire = Tire.create("tire")
         val actual = Car.create(
-            tire = tire,
+            tire = tire
         )
         val expect = Car.create(
-            tire = tire,
+            tire = tire
         )
 
         assertNotEquals(expect.carId, actual.carId)

@@ -4,7 +4,7 @@ import java.util.UUID
 
 class Car private constructor(
     val carId: UUID,
-    val tire: Tire,
+    val tire: Tire
 ) {
 
     companion object {

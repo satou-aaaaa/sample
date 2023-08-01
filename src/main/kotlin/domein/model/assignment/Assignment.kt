@@ -6,5 +6,5 @@ data class Assignment(
     val assignmentId: UUID,
     val employeeId: UUID,
     val departmentId: UUID,
-    val reason: String,
+    val reason: String
 )

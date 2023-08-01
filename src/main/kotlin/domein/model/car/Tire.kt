@@ -4,7 +4,7 @@ import java.util.UUID
 
 data class Tire(
     val tireId: UUID,
-    val value: String,
+    val value: String
 ) {
 
     companion object {
@@ -12,7 +12,7 @@ data class Tire(
         fun create(value: String): Tire {
             return Tire(
                 tireId = UUID.randomUUID(),
-                value = value,
+                value = value
             )
         }
     }
