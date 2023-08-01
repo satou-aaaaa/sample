@@ -3,7 +3,7 @@ version: 2.1
 jobs:
   test:
     docker:
-      - image: cimg/openjdk:stable
+      - image: cimg/openjdk:20.0.1
         auth:
             username: $DOCKER_HUB_USER
             password: $DOCKER_HUB_PASSWORD
