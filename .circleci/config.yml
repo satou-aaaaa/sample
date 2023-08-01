@@ -4,9 +4,9 @@ jobs:
   test:
     docker:
       - image: cimg/openjdk:stable
-    environment:
-      DOCKER_HUB_USER: $DOCKER_HUB_USER
-      DOCKER_HUB_PASSWORD: DOCKER_HUB_PASSWORD
+        auth:
+            username: DOCKER_HUB_USER
+            password: DOCKER_HUB_PASSWORD
     steps:
       - checkout
       - run: |
