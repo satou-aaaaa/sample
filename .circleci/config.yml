@@ -1,4 +1,7 @@
-version: 2
+version: 2.1
+
+orbs:
+  gradle: circleci/gradle@3.0.0
 
 jobs:
   build:
@@ -41,7 +44,6 @@ jobs:
       - run: gradle test
 
 workflows:
-  build_and_test:
-    jobs:
-      - build
-      - test
+    example-workflow:
+      jobs:
+        - gradle/test
