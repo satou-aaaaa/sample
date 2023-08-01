@@ -15,5 +15,5 @@ class DeleteRealName(
 }
 
 data class RealNameRemoveInputData(
-    val userId: UUID,
+    val userId: UUID
 )

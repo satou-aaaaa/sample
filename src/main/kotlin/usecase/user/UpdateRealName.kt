@@ -10,10 +10,9 @@ class UpdateRealName(
 ) {
 
     fun handle(input: RealNameUpdateInputData) {
-
         userRealNameRepository.replace(
             userId = input.userId,
-            realName = input.realName,
+            realName = input.realName
         )
     }
 }

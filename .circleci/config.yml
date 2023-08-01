@@ -1,9 +1,18 @@
 version: 2.1
 
-orbs:
-  gradle: circleci/gradle@3.0.0
+jobs:
+  test:
+    docker:
+      - image: cimg/openjdk:17
+        auth:
+            username: $DOCKER_HUB_USER
+            password: $DOCKER_HUB_PASSWORD
+    steps:
+      - checkout
+      - run: |
+          gradle test
 
 workflows:
-    example-workflow:
-      jobs:
-        - gradle/test
+  test:
+    jobs:
+      - test
