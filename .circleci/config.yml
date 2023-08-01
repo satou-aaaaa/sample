@@ -1,17 +1,18 @@
-orbs:
-  docker: circleci/docker@1.7.0
+version: 2.1
 
 jobs:
   test:
     docker:
-    - image: cimg/openjdk:stable
+      - image: cimg/openjdk:stable
+    environment:
+      DOCKER_HUB_USER: $DOCKER_HUB_USER
+      DOCKER_HUB_PASSWORD: DOCKER_HUB_PASSWORD
     steps:
       - checkout
       - run: |
           gradle test
 
 workflows:
-  version: 2
   test:
     jobs:
       - test
