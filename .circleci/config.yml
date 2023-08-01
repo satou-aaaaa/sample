@@ -1,9 +1,22 @@
-version: '2.1'
-
-orbs:
-  gradle: circleci/gradle@3.0.0
+version: 2.1
+executors:
+  my-custom-executor:
+    docker:
+      - image: cimg/openjdk:stable
+        auth:
+          # ensure you have first added these secrets
+          # visit app.circleci.com/settings/project/github/satou-aaaaa/sample/environment-variables
+          username: $DOCKER_HUB_USER
+          password: $DOCKER_HUB_PASSWORD
+jobs:
+  test:
+    executor: my-custom-executor
+    steps:
+      - checkout
+      - run: |
+          gradle test
 
 workflows:
-    test:
-      jobs:
-        - gradle/test
+  my-custom-workflow:
+    jobs:
+      - test
