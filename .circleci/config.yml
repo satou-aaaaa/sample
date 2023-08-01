@@ -1,8 +1,9 @@
 version: '2.1'
-orbs:
-  gradle: circleci/gradle@2.1.0
-
-workflows:
-  checkout-build-test:
-    jobs:
-      - gradle/test
+jobs:
+  test:
+    docker:
+      - image: circleci/openjdk:20-jdk
+    steps:
+      - checkout
+      - run: ./gradlew build
+      - run: ./gradlew test
