@@ -6,5 +6,5 @@ interface TireRepository {
 
     fun add(tire: Tire)
 
-    fun resolveBy(tireId:UUID):Tire
+    fun resolveBy(tireId: UUID): Tire
 }

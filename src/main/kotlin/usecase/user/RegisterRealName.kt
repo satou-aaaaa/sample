@@ -3,7 +3,7 @@ package usecase.user
 import domein.model.user.UserIdRepository
 import domein.model.user.UserRealNameRepository
 import org.springframework.stereotype.Service
-import java.util.*
+import java.util.UUID
 
 @Service
 class RegisterRealName(
@@ -21,7 +21,6 @@ class RegisterRealName(
             realName = input.realName,
         )
     }
-
 }
 
 data class RealNameRegisterInputData(

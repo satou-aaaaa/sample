@@ -1,6 +1,6 @@
 package domein.model.user
 
-import java.util.*
+import java.util.UUID
 
 interface UserIdRepository {
 

@@ -1,6 +1,6 @@
 package domein.model.department
 
-import java.util.*
+import java.util.UUID
 
 interface DepartmentRepository {
     fun selectBy(departmentId: UUID): Department

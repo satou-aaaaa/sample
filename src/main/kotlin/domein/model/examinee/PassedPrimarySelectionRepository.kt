@@ -1,5 +1,3 @@
 package domein.model.examinee
 
-interface PassedPrimarySelectionRepository {
-
-}
+interface PassedPrimarySelectionRepository

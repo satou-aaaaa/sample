@@ -3,9 +3,7 @@ package usecase.car
 import domein.model.car.Car
 import domein.model.car.CarRepository
 import domein.model.car.Tire
-import domein.model.car.TireRepository
 import org.springframework.stereotype.Service
-import java.util.*
 
 @Service
 class CreateCar(
@@ -23,5 +21,5 @@ class CreateCar(
 }
 
 data class CreateCarInputData(
-    val tire:String,
+    val tire: String,
 )

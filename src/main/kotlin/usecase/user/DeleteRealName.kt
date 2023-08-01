@@ -2,7 +2,7 @@ package usecase.user
 
 import domein.model.user.UserRealNameRepository
 import org.springframework.stereotype.Service
-import java.util.*
+import java.util.UUID
 
 @Service
 class DeleteRealName(

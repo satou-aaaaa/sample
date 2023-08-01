@@ -3,9 +3,9 @@ package domein.model.car
 import java.util.UUID
 
 data class Tire(
-    val tireId:UUID,
-    val value:String,
-){
+    val tireId: UUID,
+    val value: String,
+) {
 
     companion object {
 
@@ -13,7 +13,7 @@ data class Tire(
             return Tire(
                 tireId = UUID.randomUUID(),
                 value = value,
-                )
+            )
         }
     }
 }

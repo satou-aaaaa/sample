@@ -1,4 +1,3 @@
 package domein.model.examinee
 
-interface ExamineeInFinalSelectionRepository {
-}
+interface ExamineeInFinalSelectionRepository

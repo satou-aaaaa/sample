@@ -6,5 +6,5 @@ interface CarRepository {
 
     fun add(car: Car)
 
-    fun resolveBy(carId:UUID):Car
+    fun resolveBy(carId: UUID): Car
 }
