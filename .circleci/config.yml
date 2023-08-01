@@ -4,6 +4,6 @@ orbs:
   gradle: circleci/gradle@3.0.0
 
 workflows:
-    example-workflow:
+    test:
       jobs:
         - gradle/test
